@@ -13,7 +13,7 @@ export const useProducts = ({ filterKey }: Options) => {
         data : products = [],
         isFetching,
     } = useQuery({
-        queryKey: ['products', filterKey],
+        queryKey: ['products', {filterKey} ],
         queryFn: () => productActions.getProducts({ filterKey }),
         staleTime: 1000 * 60 * 60,
     })
