@@ -5,6 +5,7 @@ export { useProducts } from './hooks/useProducts'
 export { useProduct } from './hooks/useProduct'
 export { usePrefetchProduct } from './hooks/usePrefetchProduct'
 export { useProductMutation } from './hooks/useProductMutation'
+export { useQuotes } from './hooks/useQuotes'
 
 export type { Product } from './interfaces/products'
 export { StoreLayout } from './layout/StoreLayout'

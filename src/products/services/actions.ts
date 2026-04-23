@@ -20,6 +20,12 @@ export const getProducts = async ({ filterKey }: GetProductOptions): Promise<Pro
     return data
 }
 
+export const getQuotes = async ({ pageParam = 1 }) => {
+    const { data } = await productsApi.get('/quotes?cursor=' + pageParam)
+
+    return data
+}
+
 export const getProductById = async (id: number): Promise<Product> => {
     const { data } = await productsApi.get<Product>(`/products/${id}`)
     return data
@@ -34,8 +40,7 @@ export interface ProductLike {
 }
 
 export const createProduct = async (product: ProductLike) => {
-    // await sleep(2)
-
+    // await sleep(5)
     const { data } = await productsApi.post<Product>('/products', product)
 
     return data
